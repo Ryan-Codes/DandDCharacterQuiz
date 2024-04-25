@@ -11,7 +11,7 @@
 }
 
 body {
- background-image: url("/images/darkforest.jpg");
+ background-image: url("../images/darkforest.jpg");
  background-repeat: no-repeat;
 }
 
