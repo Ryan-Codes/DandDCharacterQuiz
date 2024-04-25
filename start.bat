@@ -1,1 +1,1 @@
-start cmd /k node .
+start cmd /k node ./webserver/index.js
