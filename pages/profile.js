@@ -1,3 +1,6 @@
+/**
+ * Server renders the profile page
+ */
 module.exports = {
     name: "/profile",
     method: "get",

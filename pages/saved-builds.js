@@ -1,3 +1,6 @@
+/**
+ * Server retrieves saved builds and renders them on profile page
+ */
 module.exports = {
     name: "/saved-builds",
     method: "get",
