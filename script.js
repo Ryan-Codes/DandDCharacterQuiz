@@ -35,3 +35,6 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     //Store in database
     //redirect to dashboard or profile
 });
+
+
+
