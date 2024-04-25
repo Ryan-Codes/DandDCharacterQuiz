@@ -153,3 +153,18 @@ h2{
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+.editable {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    cursor: pointer;
+}
+
+
+.editable input[type="text"] {
+    width: 100%;
+    border: none;
+    outline: none;
+}
