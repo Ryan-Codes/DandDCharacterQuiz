@@ -13,17 +13,8 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-// const pageFiles = fs.readdirSync('./pages/').filter(file => file.endsWith('.js'));
-// for(const pageFile of pageFiles)
-// {
-//     if(pageFile.method == "get")
-//     {
-//         app.get('/', pageFile.execute(req, res));
-//         const command = require(`./pages/${file}`);
-//             pages.set(command.name, command);
-//     }
-//     else if(pageFile.method == "post")
-//     {
-//         app.post('/', pageFile.execute(req, res));
-//     }
-// }
+
+for(const page of fs.readdirSync('./pages/').filter(file => file.endsWith('.js')))
+{
+    app[page.method](page.name, page.execute(req, res));
+}
