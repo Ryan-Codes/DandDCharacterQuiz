@@ -13,8 +13,12 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
-for(const page of fs.readdirSync("./pages/").filter(file => file.endsWith(".js")))
+/*
+route handler:
+reads through all files in the pages/ folder,
+where each module represents a page, containing the: name/route, request method, and response function
+*/
+for(const page of fs.readdirSync("./pages/"))
 {
     app[page.method](page.name, page.execute(req, res));
 }

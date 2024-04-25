@@ -1,3 +1,6 @@
+/**
+* Server renders the index page
+*/
 module.exports = {
     name: "/index",
     method: "get",
