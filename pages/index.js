@@ -1,5 +1,5 @@
 module.exports = {
-    name: "/",
+    name: "/index",
     method: "get",
     execute(req, res)
     {
