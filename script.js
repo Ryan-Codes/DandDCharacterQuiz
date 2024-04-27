@@ -22,18 +22,14 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 document.getElementById("signupForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
-    //retrieve information from form
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const userName = document.getElementById('userName').value;
-    //Use the variables to define user fields
-    user.firstname = firstName;
-    user.lastname = lastName;
-    user.email = email;
-    user.password = password;
-    user.userName = userName;
+    // iterate through the fields of the form
+    for(const prop of [ "firstName", "lastName", "email", "password", "userName" ])
+    {
+        //retrieve information from form
+        const val = document.getElementById(prop).value;
+        //Use the variables to define user fields
+        user[prop] = val;
+    }
     //Parse into JSON format
     JSON.stringify(user);
     //Store in database
