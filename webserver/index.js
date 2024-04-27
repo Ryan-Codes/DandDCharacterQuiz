@@ -1,31 +1,27 @@
 // Import required modules
-import express from "express"
-import mongoose from "mongoose"
-
+// import express from "express"
+// import mongoose from "mongoose"
+const express = require("express");
 const app = express();
 
 
-mongoose.connect("mongodb://localhost:27017/DND").then(() => {
-    console.log("Database is connected successfully.");
-    // app.listen(8000, () => {
-    //     console.log(`Server is running on port 8000 `);
-    // });  
-})
-.catch((error)=>console.log(error));
+// mongoose.connect("mongodb://localhost:27017/DND").then(() => {
+//     console.log("Database is connected successfully.");
+// })
+// .catch((error)=>console.log(error));
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
+// const userSchema = new mongoose.Schema({
+//     name: String,
+//     age: Number,
+// });
+
+// const UserModel = mongoose.model("users", userSchema);
+
+app.get("/getUsers", async(req, res)=>{
+// (async () => {
+    // console.log(await UserModel.find());
+   res.send("userData");
 });
-
-const UserModel = mongoose.model("users", userSchema);
-
-//app.get("/getUsers", async(req, res)=>{
-(async () => {
-    console.log(await UserModel.find());
-  //  res.json(userData);
-})();
-
 
 //const express = require("express");
 //const fs = require("fs");
@@ -35,11 +31,16 @@ const UserModel = mongoose.model("users", userSchema);
 //});
 
 // Start the server
-//app.listen(PORT, () => {
- //   console.log(`Server is running on port ${PORT}`);
-//});
-
-//for(const page of fs.readdirSync("./pages/").filter(file => file.endsWith(".js")))
+app.listen(3000, () => {
+   console.log(`Server is running on port ${3000}`);
+});
+const fs = require("fs");
+const pageNames = fs.readdirSync("../pages/");
+for(const pageName of pageNames)
 {
-//    app[page.method](page.name, page.execute(req, res));
+    const page = require(`../pages/${pageName}`);
+    app[page.method](page.name, (req, res) => {
+        page.execute(req, res);
+    });
+    console.log(`${page.method}: ${page.name}`);
 }
