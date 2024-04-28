@@ -43,7 +43,7 @@ app.listen(3000, () => {
 for(const file of fs.readdirSync("../pages/"))
 {
     const page = require(`../pages/${file}`);
-    app[page.method](page.name, (req, res) => {
+    app[true ? "get" : page.method](page.name, (req, res) => {
         page.execute(req, res);
     });
 }
