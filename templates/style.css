@@ -168,3 +168,36 @@ h2{
     border: none;
     outline: none;
 }
+
+.profile {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border: solid white;
+    background-color: rgba(0, 200, 10, .1);
+    backdrop-filter: blur(20px);
+    color: white;
+}
+
+.profile-picture  {
+    padding-top: 5px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: solid white 2px;
+    width: 200px;
+    height: 200px;
+}
+
+.submit-image {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
