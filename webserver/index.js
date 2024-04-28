@@ -34,7 +34,8 @@ const path = require("path");
 
 app.set("views", path.join(__dirname, "../templates"));
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../public")));
+console.log(path.join(__dirname, "../public"));
 // Start the server
 app.listen(3000, () => {
    console.log(`Server is running on port ${3000}`);
