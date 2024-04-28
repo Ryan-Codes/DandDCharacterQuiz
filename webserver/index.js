@@ -2,6 +2,7 @@
 // import express from "express"
 // import mongoose from "mongoose"
 const express = require("express");
+const fs = require("fs");
 const app = express();
 
 
@@ -17,11 +18,11 @@ const app = express();
 
 // const UserModel = mongoose.model("users", userSchema);
 
-app.get("/getUsers", async(req, res)=>{
-// (async () => {
-    // console.log(await UserModel.find());
-   res.send("userData");
-});
+//testing for mongo
+// app.get("/getUsers", async(req, res)=>{
+//    console.log(await UserModel.find());
+//    res.send("userData");
+// });
 
 //const express = require("express");
 //const fs = require("fs");
@@ -29,18 +30,19 @@ app.get("/getUsers", async(req, res)=>{
 //app.get("/", (req, res) => {
 //    res.send("Welcome to the Dungeons and Dragons web server!");
 //});
+const path = require("path");
 
+app.set("views", path.join(__dirname, "../templates"));
+app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
 // Start the server
 app.listen(3000, () => {
    console.log(`Server is running on port ${3000}`);
 });
-const fs = require("fs");
-const pageNames = fs.readdirSync("../pages/");
-for(const pageName of pageNames)
+for(const file of fs.readdirSync("../pages/"))
 {
-    const page = require(`../pages/${pageName}`);
+    const page = require(`../pages/${file}`);
     app[page.method](page.name, (req, res) => {
         page.execute(req, res);
     });
-    console.log(`${page.method}: ${page.name}`);
 }

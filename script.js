@@ -2,13 +2,14 @@ const {MongoClient} = require('mongodb')
 
 
 //Connect to our database
-async function main() {
+async function main()
+{
 
 }
 
 let user = {};
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document.getElementById("loginForm").addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent default form submission
 
     var formData = new FormData(this);
@@ -20,8 +21,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     //If both match, redirect to dashboard or profile
 });
 
-document.getElementById("signupForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+document.getElementById("signupForm").addEventListener("submit", (event) => {
+    event.preventDefault();
     // iterate through the fields of the form
     for(const prop of [ "firstName", "lastName", "email", "password", "userName" ])
     {
