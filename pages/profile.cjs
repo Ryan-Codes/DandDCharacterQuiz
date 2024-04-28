@@ -6,6 +6,6 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
-        res.send('fu');
+        res.render("profile", req.query);
     }
 };
