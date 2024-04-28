@@ -46,7 +46,7 @@
             <p id="aboutMeContent">Click here to edit...</p>
         </section>
     </container>
-
+    
     <script>
         function makeEditable(element) {
     // Create an input field
@@ -62,7 +62,7 @@
     inputField.focus();
 
     // Handle input field blur event
-    inputField.addEventListener("blur", () => {
+    inputField.addEventListener("blur", function() {
         // Replace the input field with a paragraph
         var paragraph = document.createElement("p");
         paragraph.innerText = inputField.value;
