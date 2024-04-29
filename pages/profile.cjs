@@ -6,6 +6,8 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
+        const db = require("../database.js");
+        let user = req.query.username
         res.render("profile", req.query);
     }
 };
