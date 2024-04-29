@@ -28,7 +28,13 @@
                 <!-- Answers will be generated here -->
             </div>
             <div class="results-container">
-                <h2>Results:</h2>
+                <h2>
+                    Results:
+                    <%= result %>
+                </h2>
+                <form id="resetForm" action="/quiz" method="post">
+                    <input type="submit" value=" Restart Quiz " name="reset" class="reset-quiz" id="reset">
+                </form>
                 <!--Display results here-->
             </div>
         </div>

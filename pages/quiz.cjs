@@ -21,6 +21,7 @@ module.exports = {
             res.render("quiz", {
                 question: (questionNumber + 1) + ". " + questions[questionNumber].question,
                 answers: JSON.stringify(Object.keys(questions[questionNumber].answers)),
+                result: ""
             });
         }
         else
@@ -35,7 +36,11 @@ module.exports = {
                     max = user[job];
                 }
             }
-            res.send(`You are a ${index}!`);
+            res.render("quiz", {
+                question: "",
+                answers: "",
+                result: `You are a ${index}!`
+            });
         }
         //res.send('Welcome to the Dungeons and Dragons web server!');
     }

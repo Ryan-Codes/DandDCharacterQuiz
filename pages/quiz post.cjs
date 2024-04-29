@@ -14,6 +14,12 @@ module.exports = {
             res.redirect("/");
             return;
         }
+        if(req.body.reset)
+        {
+            db.resetUserStats(req.cookies.username);
+            res.redirect("/quiz");
+            return;
+        }
         let values = questions[(await db.getUser(req.cookies.username)).question].answers[Object.keys(req.body)[0]];
         values.question = 1;
         db.updateUserValues(req.cookies.username, values);

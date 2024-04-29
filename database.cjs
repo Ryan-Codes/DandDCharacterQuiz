@@ -43,7 +43,7 @@ async function getUser(username){
     {
         return await UserModel.findOne({ username });
     }
-    catch (error)
+    catch(error)
     {
         console.log(error);
         return 0;
@@ -52,24 +52,31 @@ async function getUser(username){
 
 // Insert a new user into the database
 async function insertUser(newUser) {
-    try {
+    try
+    {
         const user = await UserModel.create(newUser);
         return user;
-    } catch (error) {
+    }
+    catch(error)
+    {
         return null;
     }
 }
 
 // Insert a new build for a user
-async function insertBuild(username, newBuild) {
-    try {
+async function insertBuild(username, newBuild)
+{
+    try
+    {
         const user = await UserModel.findOneAndUpdate(
             { username },
             { $push: { builds: newBuild } },
             { new: true }
         );
         return user;
-    } catch (error) {
+    }
+    catch(error)
+    {
         return null;
     }
 }
@@ -92,10 +99,42 @@ async function updateUserValues(username, valuesToAdd)
     }
 }
 
+async function resetUserStats(username)
+{
+    try {
+        const user = await UserModel.findOneAndUpdate(
+            { username },
+            {
+                $set: {
+                    question: 0,
+                    artificer: 0,
+                    barbarian: 0,
+                    bard: 0,
+                    cleric: 0,
+                    druid: 0,
+                    fighter: 0,
+                    monk: 0,
+                    paladin: 0,
+                    ranger: 0,
+                    rogue: 0,
+                    sorcerer: 0,
+                    warlock: 0,
+                    wizard: 0
+                }
+            },
+            { new: true }
+        );
+        return user;
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     getUser,
     insertUser,
     insertBuild,
-    updateUserValues
+    updateUserValues,
+    resetUserStats
 };
 

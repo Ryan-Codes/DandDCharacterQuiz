@@ -21,8 +21,8 @@ for(const file of fs.readdirSync(path.join(__dirname, "../pages/")))
 {
     const page = require(path.join(__dirname, `../pages/${file}`));
     app[false ? "get" : page.method](page.name, (req, res) => {
-        console.log(page.method + " " + page.name);
-        console.log(req.body);
+        // console.log(page.method + " " + page.name);
+        // console.log(req.body);
         page.execute(req, res);
     });
 }
