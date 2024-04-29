@@ -14,11 +14,29 @@ module.exports = {
             res.redirect("/");
             return;
         }
-        const questionNumber = (await db.getUser(req.cookies.username)).question;
-        res.render("quiz", {
-            question: (questionNumber + 1) + ". " + questions[questionNumber].question,
-            answers: JSON.stringify(Object.keys(questions[questionNumber].answers)),
-        });
+        const user = await db.getUser(req.cookies.username)
+        const questionNumber = user.question;
+        if(questionNumber < 15)
+        {
+            res.render("quiz", {
+                question: (questionNumber + 1) + ". " + questions[questionNumber].question,
+                answers: JSON.stringify(Object.keys(questions[questionNumber].answers)),
+            });
+        }
+        else
+        {
+            let index = 0;
+            let max = 0;
+            for(const job of [ "artificer", "barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"])
+            {
+                if(user[job] > max)
+                {
+                    index = job;
+                    max = user[job];
+                }
+            }
+            res.send(`You are a ${index}!`);
+        }
         //res.send('Welcome to the Dungeons and Dragons web server!');
     }
 };
