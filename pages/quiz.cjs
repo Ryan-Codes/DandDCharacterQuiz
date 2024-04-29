@@ -14,11 +14,10 @@ module.exports = {
             res.redirect("/");
             return;
         }
-        console.log((await db.getUser(req.cookies.username)).question + 1);
-        console.log(questions[(await db.getUser(req.cookies.username)).question].question);
+        const questionNumber = (await db.getUser(req.cookies.username)).question;
         res.render("quiz", {
-            question: questions[(await db.getUser(req.cookies.username)).question].question,
-            answers: JSON.stringify(Object.keys(questions[(await db.getUser(req.cookies.username)).question].answers)),
+            question: (questionNumber + 1) + ". " + questions[questionNumber].question,
+            answers: JSON.stringify(Object.keys(questions[questionNumber].answers)),
         });
         //res.send('Welcome to the Dungeons and Dragons web server!');
     }

@@ -1,4 +1,5 @@
 const path = require("path");
+const db = require(path.join(__dirname, "../database.cjs"));
 /**
  * Server renders the profile page
  */
@@ -12,7 +13,6 @@ module.exports = {
             res.redirect("/");
             return;
         }
-        const db = require(path.join(__dirname, "../database.cjs"));
         let user = req.query.username;
         let pfp, bio;
         res.render("profile", {

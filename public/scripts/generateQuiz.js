@@ -40,12 +40,13 @@ function displayQuestion(answers)
     //             .catch(error => console.error('Error fetching next question:', error));
     //     });
     answerContainer.appendChild(document.createElement("br"));
-    for(const answer of answers)
+    for(let i = 0; i < answers.length; i++)
     {
         const input = document.createElement("input");
         input.class = "answer-btn";
         input.type = "submit";
-        input.value = answer;
+        input.name = answers[i];
+        input.value = " " + String.fromCharCode(i + 65) + ". " + answers[i] + " ";
         answerContainer.appendChild(input);
         answerContainer.appendChild(document.createElement("br"));
         answerContainer.appendChild(document.createElement("br"));

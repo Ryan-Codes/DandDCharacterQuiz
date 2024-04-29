@@ -38,15 +38,15 @@ const buildSchema = new mongoose.Schema({
 const UserModel = mongoose.model("users", userSchema);
 
 // Get a user by username
-async function getUser(username)
-{
+async function getUser(username){
     try
     {
         return await UserModel.findOne({ username });
     }
     catch (error)
     {
-        return null;
+        console.log(error);
+        return 0;
     }
 }
 
@@ -75,15 +75,19 @@ async function insertBuild(username, newBuild) {
 }
 
 // Update user class values
-async function updateUserClassValues(username, classValuesToAdd) {
-    try {
+async function updateUserValues(username, valuesToAdd)
+{
+    try
+    {
         const user = await UserModel.findOneAndUpdate(
             { username },
-            { $inc: classValuesToAdd },
+            { $inc: valuesToAdd },
             { new: true }
         );
         return user;
-    } catch (error) {
+    }
+    catch(error)
+    {
         return null;
     }
 }
@@ -92,6 +96,6 @@ module.exports = {
     getUser,
     insertUser,
     insertBuild,
-    updateUserClassValues
+    updateUserValues
 };
 
