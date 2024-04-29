@@ -45,7 +45,7 @@ h2{
     text-align: center;
 }
 
-.container {
+.quiz-container {
     background: rgba(99, 34, 34, 0.82);
     text-align: center;
     width: 80%;
@@ -193,11 +193,52 @@ h2{
     border: solid white 2px;
     width: 200px;
     height: 200px;
+    margin-bottom: 7px;
 }
 
-.submit-image {
-    display: flex;
-    position: relative;
+#profile-greeting{
+    font-size: 40px;
+}
+
+#userImage {
+    display: none;
+}
+
+#uploadButton {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    padding: 3px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateX(90%);
+    margin-top: 160px;
+    margin-left: 80px;
+    background-color: rgba(173,172,172,0.95);
+    box-shadow: 2px 4px 4px black;
+}
+
+.user-options-btn{
+    width: 75%;
+    height: 45px;
     align-items: center;
-    justify-content: center;
+    margin-left: 12%;
+    margin-bottom: 5px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+#build-content {
+    text-align: center;
 }
