@@ -103,6 +103,7 @@ h2{
 }
 
 
+
 .wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
@@ -218,7 +219,7 @@ h2{
     box-shadow: 2px 4px 4px black;
 }
 
-.user-options-btn{
+.user-options-btn, .login, .signup{
     width: 75%;
     height: 45px;
     align-items: center;
@@ -241,4 +242,16 @@ h2{
 
 #build-content {
     text-align: center;
+}
+
+#mission-statement, #login-signup-btns{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 10px auto;
 }
