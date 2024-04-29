@@ -503,7 +503,7 @@
                 "warlock": 0,
                 "wizard": 5
             },
-            "Analyze the situation and try to derive the best \n solution to the problem":
+            "Analyze the situation and try to derive the best \nsolution to the problem":
             {
                 "artificer": 10,
                 "barbarian": 0,
@@ -755,7 +755,7 @@
                 "warlock": 10,
                 "wizard": 10
             },
-            "Taking breaks to reflect on what I've learned \n so far":
+            "Taking breaks to reflect on what I've learned \nso far":
             {
                 "artificer": 0,
                 "barbarian": 5,
@@ -911,7 +911,7 @@
                 "warlock": 0,
                 "wizard": 0
             },
-            "Craft elaborate scheme in your head about how you're going to get back at them, \n ruin their life, get your revenge and finally triumph over this thief only to let that scheme remain in your head and never act upon it":
+            "Craft elaborate scheme in your head about how you're going to get back at them, \nruin their life, get your revenge and finally triumph over this thief only to let that scheme remain in your head and never act upon it":
             {
                 "artificer": 10,
                 "barbarian": 0,
@@ -1185,7 +1185,7 @@
                 "warlock": 10,
                 "wizard": 0
             },
-            "Well, while they're distracted, surely they won't \n notice something missing?":
+            "Well, while they're distracted, surely they won't \nnotice something missing?":
             {
                 "artificer": 0,
                 "barbarian": 5,
@@ -1207,7 +1207,7 @@
         "question": "You're taking a test and you find that you are unprepared! What do you do?",
         "answers":
         {
-            "This would never happen, I spent 20 hours studying for \n this test over the past week":
+            "This would never happen, I spent 20 hours studying for \nthis test over the past week":
             {
                 "artificer": 10,
                 "barbarian": 0,
@@ -1239,7 +1239,7 @@
                 "warlock": 0,
                 "wizard": 0
             },
-            "The person next to me seems to know what they're doing, surely \n the Professor won't notice me sneaking a peak?":
+            "The person next to me seems to know what they're doing, surely \nthe Professor won't notice me sneaking a peak?":
             {
                 "artificer": 0,
                 "barbarian": 10,
