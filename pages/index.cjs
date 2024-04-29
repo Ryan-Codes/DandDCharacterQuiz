@@ -6,6 +6,6 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
-        res.render("index", req.query);
+        res.render("index");
     }
 };

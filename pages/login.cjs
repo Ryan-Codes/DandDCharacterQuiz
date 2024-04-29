@@ -7,7 +7,6 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
-        console.log(req.query);
-        res.render("login", req.query);
+        res.render("login");
     }
 };
