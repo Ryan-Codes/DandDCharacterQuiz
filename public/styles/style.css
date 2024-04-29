@@ -10,8 +10,8 @@
     box-sizing: border-box;
 }
 
-body {
- background-image: url("/images/darkforest.jpg");
+body{
+ background-image: url("/public/images/darkforest.jpg");
  background-repeat: no-repeat;
 }
 
@@ -53,9 +53,12 @@ h2{
     margin-right: auto;
     padding: 20px;
     max-width: 500px;
+    border-radius: 20%;
+    border: solid rgb(99,34,34) 1px ;
+    backdrop-filter: blur(20px);
 }
 
-.wrapper {
+.wrapper, .signup-wrapper {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -219,7 +222,7 @@ h2{
     box-shadow: 2px 4px 4px black;
 }
 
-.user-options-btn, .login-btn, .signup{
+.user-options-btn, .login-btn, .signup-btn{
     width: 75%;
     height: 45px;
     align-items: center;
