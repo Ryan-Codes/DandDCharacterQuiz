@@ -18,9 +18,13 @@
         </h1>
         <div class="quiz-container">
             <div class="question-container">
-                <h2 id="question">Question placeholder</h2>
+                <h2 id="question">
+                    <%= question %>
+                </h2>
             </div>
+            <form id="quizForm" action="/quiz" method="post">
             <div class="answer-container" id="answer-container">
+                <input class="answer-btn" type="submit" value="<%= a %>">
                 <!-- Answers will be generated here -->
             </div>
         </div>

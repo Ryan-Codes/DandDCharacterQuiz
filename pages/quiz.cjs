@@ -15,8 +15,11 @@ module.exports = {
             return;
         }
         console.log((await db.getUser(req.cookies.username)).question + 1);
-        questions[(await db.getUser(req.cookies.username)).question]
-        res.render("quiz", (await db.getUser(req.cookies.username)).question);
+        console.log(questions[(await db.getUser(req.cookies.username)).question].question);
+        res.render("quiz", {
+            question: questions[(await db.getUser(req.cookies.username)).question].question,
+            a: Object.keys(questions[(await db.getUser(req.cookies.username)).question].answers).join(", ")
+        });
         //res.send('Welcome to the Dungeons and Dragons web server!');
     }
 };
