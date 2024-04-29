@@ -2,13 +2,15 @@
 const express = require("express");
 const fs = require("fs");
 const app = express();
-
+const bodyParser = require('body-parser');
 const path = require("path");
+
+// const router = express.Router();
 
 app.set("views", path.join(__dirname, "../templates"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "../public")));
-console.log(path.join(__dirname, "../public"));
+app.use(express.urlencoded({ extended: true }));
 // Start the server
 app.listen(3000, () => {
    console.log(`Server is running on port ${3000}`);
@@ -16,10 +18,17 @@ app.listen(3000, () => {
 for(const file of fs.readdirSync(path.join(__dirname, "../pages/")))
 {
     const page = require(path.join(__dirname, `../pages/${file}`));
-    app[true ? "get" : page.method](page.name, (req, res) => {
+    app[false ? "get" : page.method](page.name, (req, res) => {
+        console.log(page.method + " " + page.name);
+        console.log(req.body);
         page.execute(req, res);
     });
 }
+
+
+
+
+
 
 // mongoose.connect("mongodb://localhost:27017/DND").then(() => {
 //     console.log("Database is connected successfully.");

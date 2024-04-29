@@ -4,9 +4,10 @@
  */
 module.exports = {
     name: "/login",
-    method: "post",
+    method: "get",
     execute(req, res)
     {
+        console.log(req.query);
         res.render("login", req.query);
     }
 };
