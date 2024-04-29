@@ -1,24 +1,50 @@
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/DND").then(() => {
-    console.log("Database is connected successfully.");
+    // console.log("Database is connected successfully.");
 }).catch((error) => console.log(error));
 
 const userSchema = new mongoose.Schema({
     username: String,
-    age: Number,
-    // Other fields as needed
+    password: String,
+    artificer: Number,
+    barbarian: Number,
+    bard: Number,
+    cleric: Number,
+    druid: Number,
+    fighter: Number,
+    monk: Number,
+    paladin: Number,
+    ranger: Number,
+    rogue: Number,
+    sorcerer: Number,
+    warlock: Number,
+    wizard: Number
+});
+const buildSchema = new mongoose.Schema({
+    name: String,
+    level: Number,
+    str: Number,
+    dex: Number,
+    con: Number,
+    int: Number,
+    wis: Number,
+    cha: Number,
+    class: String
 });
 
 const UserModel = mongoose.model("users", userSchema);
 
 // Get a user by username
-async function getUser(username) {
-    try {
-        const user = await UserModel.findOne({ username });
-        return user;
-    } catch (error) {
-        throw error;
+async function getUser(username)
+{
+    try
+    {
+        return await UserModel.findOne({ username });
+    }
+    catch (error)
+    {
+        return null;
     }
 }
 
@@ -28,7 +54,7 @@ async function insertUser(newUser) {
         const user = await UserModel.create(newUser);
         return user;
     } catch (error) {
-        throw error;
+        return null;
     }
 }
 
@@ -42,7 +68,7 @@ async function insertBuild(username, newBuild) {
         );
         return user;
     } catch (error) {
-        throw error;
+        return null;
     }
 }
 
@@ -56,7 +82,7 @@ async function updateUserClassValues(username, classValuesToAdd) {
         );
         return user;
     } catch (error) {
-        throw error;
+        return null;
     }
 }
 
