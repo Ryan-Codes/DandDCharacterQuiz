@@ -7,7 +7,6 @@ module.exports = {
     method: "post",
     execute(req, res)
     {
-        res.send(require("../templates/signup.html"));
-        //res.send('Welcome to the Dungeons and Dragons web server!');
+        res.render("signup", req.query);
     }
 };

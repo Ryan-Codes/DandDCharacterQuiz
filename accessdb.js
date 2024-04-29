@@ -1,5 +1,6 @@
+const path = require("path");
 
-const { getUser, insertUser, insertBuild, updateUserClassValues } = require('./database.js');
+const { getUser, insertUser, insertBuild, updateUserClassValues } = require(path.join(__dirname, "./database.js"));
 
 // Get user by username
 const username = 'John';

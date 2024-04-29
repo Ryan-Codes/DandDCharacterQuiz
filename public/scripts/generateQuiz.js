@@ -12,7 +12,7 @@ fetch('questions.json')
 function displayQuestion(questionData) {
     const questionElement = document.getElementById('question');
     const answerContainer = document.getElementById('answer-container');
-    
+
     // Update question text
     questionElement.textContent = questionData.question;
 

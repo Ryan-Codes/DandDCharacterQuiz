@@ -8,6 +8,5 @@ module.exports = {
     execute(req, res)
     {
         res.render("login", req.query);
-        //res.send('Welcome to the Dungeons and Dragons web server!');
     }
 };

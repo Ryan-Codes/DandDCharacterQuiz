@@ -13,9 +13,9 @@ console.log(path.join(__dirname, "../public"));
 app.listen(3000, () => {
    console.log(`Server is running on port ${3000}`);
 });
-for(const file of fs.readdirSync("../pages/"))
+for(const file of fs.readdirSync(path.join(__dirname, "../pages/")))
 {
-    const page = require(`../pages/${file}`);
+    const page = require(path.join(__dirname, `../pages/${file}`));
     app[true ? "get" : page.method](page.name, (req, res) => {
         page.execute(req, res);
     });
