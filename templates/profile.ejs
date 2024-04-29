@@ -47,7 +47,7 @@
             <h1 id="profile-greeting">Hello user</h1>
             <header class="hero-section">
                 <div class="profile-picture">
-                    <img src="/images/default.jpg" id="hero-image">
+                    <img src=<%= pfp %> id="hero-image">
                     <input type="file" id="userImage" name="image">
                     <label for="userImage" id="uploadButton">
                         <i class="bi bi-camera"></i>
@@ -56,11 +56,13 @@
             </header>
             <section class="editable" id="aboutMe" onClick="makeEditable(this)">
                 <p id="aboutMeContent">
-                    About Me...
+                    <%= bio %>
                 </p>
             </section>
             <section id="user-options">
-                <button class="user-options-btn" id="builds-btn">My Builds</button>
+                <button class="user-options-btn" id="builds-btn">
+                    My Builds
+                </button>
                 <div id="sectionToToggle" class="hidden">
                     <h2>Section Content</h2>
                     <p id="build-content">This is the content of the section that will be toggled.</p>

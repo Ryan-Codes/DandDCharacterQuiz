@@ -4,11 +4,15 @@ const path = require("path");
  */
 module.exports = {
     name: "/profile",
-    method: "post",
+    method: "get",
     execute(req, res)
     {
         const db = require(path.join(__dirname, "../database.cjs"));
         let user = req.query.username;
-        res.render("profile", req.query);
+        let pfp, bio;
+        res.render("profile", {
+            pfp: pfp ?? "/images/default.jpg",
+            bio: bio ?? "About Me..."
+        });
     }
 };
