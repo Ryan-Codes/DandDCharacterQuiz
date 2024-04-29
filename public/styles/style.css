@@ -219,7 +219,7 @@ h2{
     box-shadow: 2px 4px 4px black;
 }
 
-.user-options-btn, .signup{
+.user-options-btn, .login-btn, .signup{
     width: 75%;
     height: 45px;
     align-items: center;
