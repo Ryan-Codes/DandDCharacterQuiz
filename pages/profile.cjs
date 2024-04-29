@@ -13,9 +13,9 @@ module.exports = {
             res.redirect("/");
             return;
         }
-        let user = req.query.username;
         let pfp, bio;
         res.render("profile", {
+            username: req.cookies.username,
             pfp: pfp ?? "/images/default.jpg",
             bio: bio ?? "About Me..."
         });

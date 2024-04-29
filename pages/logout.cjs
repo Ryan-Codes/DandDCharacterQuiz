@@ -3,7 +3,7 @@
  */
 module.exports = {
     name: "/logout",
-    method: "get",
+    method: "post",
     execute(req, res)
     {
         res.clearCookie("username");

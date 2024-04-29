@@ -39,7 +39,9 @@
             </div>
         </nav>
         <div class="profile">
-            <h1 id="profile-greeting">Hello user</h1>
+            <h1 id="profile-greeting">
+                Hello <%= username %>
+            </h1>
             <header class="hero-section">
                 <div class="profile-picture">
                     <img src=<%= pfp %> id="hero-image">
@@ -55,15 +57,17 @@
                 </p>
             </section>
             <section id="user-options">
-                <button class="user-options-btn" id="builds-btn">
+                <!-- <button class="user-options-btn" id="builds-btn">
                     My Builds
-                </button>
+                </button> -->
                 <div id="sectionToToggle" class="hidden">
                     <h2>Section Content</h2>
                     <p id="build-content">This is the content of the section that will be toggled.</p>
                 </div>
-                <button class="user-options-btn" id="quiz-btn">Quiz</button>
-                <button class="user-options-btn" id="logout-btn">Logout</button>
+                <form id="logoutForm" action="/logout" method="post">
+                    <input type="submit" class="user-options-btn" id="logout-btn" name="logout" value="logout">
+                </form>
+                <br>
             </section>
         </div>
         <script Content-Type="application/javascript" src="/scripts/makeEditable.js"></script>
