@@ -39,7 +39,7 @@ module.exports = {
             res.render("quiz", {
                 question: "",
                 answers: "",
-                result: `You are a ${index}!`
+                result: `Results: You are a ${index}!`
             });
         }
         //res.send('Welcome to the Dungeons and Dragons web server!');
