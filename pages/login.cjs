@@ -17,7 +17,13 @@ module.exports = {
         }
         if(req.body.username && req.body.password)
         {
-            if(password_verify(req.body.password, (await db.getUser(req.body.username)).password))
+            const user = await db.getUser(req.body.username);
+            if(!user)
+            {
+                res.redirect("/profile");
+                return
+            }
+            if(password_verify(req.body.password, user.password))
             // if(password_verify(req.body.password, (await db.getUser(req.body.username)).hash))
             {
                 res.cookie("username", req.body.username);
