@@ -1,10 +1,25 @@
 // Import required modules
-// import express from "express"
-// import mongoose from "mongoose"
 const express = require("express");
 const fs = require("fs");
 const app = express();
 
+const path = require("path");
+
+app.set("views", path.join(__dirname, "../templates"));
+app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "../public")));
+console.log(path.join(__dirname, "../public"));
+// Start the server
+app.listen(3000, () => {
+   console.log(`Server is running on port ${3000}`);
+});
+for(const file of fs.readdirSync("../pages/"))
+{
+    const page = require(`../pages/${file}`);
+    app[true ? "get" : page.method](page.name, (req, res) => {
+        page.execute(req, res);
+    });
+}
 
 // mongoose.connect("mongodb://localhost:27017/DND").then(() => {
 //     console.log("Database is connected successfully.");
@@ -30,20 +45,3 @@ const app = express();
 //app.get("/", (req, res) => {
 //    res.send("Welcome to the Dungeons and Dragons web server!");
 //});
-const path = require("path");
-
-app.set("views", path.join(__dirname, "../templates"));
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "../public")));
-console.log(path.join(__dirname, "../public"));
-// Start the server
-app.listen(3000, () => {
-   console.log(`Server is running on port ${3000}`);
-});
-for(const file of fs.readdirSync("../pages/"))
-{
-    const page = require(`../pages/${file}`);
-    app[true ? "get" : page.method](page.name, (req, res) => {
-        page.execute(req, res);
-    });
-}
