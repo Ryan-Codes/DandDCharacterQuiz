@@ -55,6 +55,8 @@
     },
     {
         "question": "You're faced with a tough situation; how do you get out?",
+        "answers":
+        {
             "Intuition":
             {
                 "artificer": 10,
@@ -119,6 +121,7 @@
                 "warlock": 10,
                 "wizard": 10
             }
+        }
     },
     {
         "question": "What do you want out of life?",
@@ -224,6 +227,8 @@
     },
     {
         "question": "What do you spend the most time thinking about?",
+        "answers":
+        {
             "About yourself":
             {
                 "artificer": 0,
@@ -288,6 +293,7 @@
                 "warlock": 10,
                 "wizard": 10
             }
+        }
     },
     {
         "question": "What drives or inspires you?",
