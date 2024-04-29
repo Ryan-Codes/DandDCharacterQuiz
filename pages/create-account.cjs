@@ -10,6 +10,11 @@ module.exports = {
     method: "post",
     async execute(req, res)
     {
+        if(req.cookies.username)
+        {
+            res.redirect("/profile");
+            return;
+        }
         if(req.body.username && req.body.password)
         {
             db.insertUser({

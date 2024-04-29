@@ -10,8 +10,12 @@ module.exports = {
     method: "post",
     async execute(req, res)
     {
-
-        if(req.body.username)
+        if(req.cookies.username)
+        {
+            res.redirect("/profile");
+            return;
+        }
+        if(req.body.username && req.body.password)
         {
             if(password_verify(req.body.password, (await db.getUser(req.body.username)).password))
             // if(password_verify(req.body.password, (await db.getUser(req.body.username)).hash))

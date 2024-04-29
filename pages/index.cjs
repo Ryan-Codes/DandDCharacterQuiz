@@ -6,6 +6,11 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
+        if(req.cookies.username)
+        {
+            res.redirect("/profile");
+            return;
+        }
         res.render("index");
     }
 };

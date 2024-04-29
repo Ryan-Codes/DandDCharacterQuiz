@@ -6,7 +6,7 @@ const questions = require(path.join(__dirname, "../questions"));
  */
 module.exports = {
     name: "/quiz",
-    method: "get",
+    method: "post",
     async execute(req, res)
     {
         if(!req.cookies.username)

@@ -7,6 +7,11 @@ module.exports = {
     method: "get",
     execute(req, res)
     {
+        if(!req.cookies.username)
+        {
+            res.redirect("/");
+            return;
+        }
         const db = require(path.join(__dirname, "../database.cjs"));
         let user = req.query.username;
         let pfp, bio;
