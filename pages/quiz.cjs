@@ -28,7 +28,7 @@ module.exports = {
         {
             let index = 0;
             let max = 0;
-            for(const job of [ "artificer", "barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"])
+            for(const job of [ "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"])
             {
                 if(user[job] > max)
                 {
