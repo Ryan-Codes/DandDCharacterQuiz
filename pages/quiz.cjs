@@ -26,20 +26,20 @@ module.exports = {
         }
         else
         {
-            let index = 0;
+            let index = " ";
             let max = 0;
             for(const job of [ "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"])
             {
-                if(user[job] > max)
+                if(user[job.toLowerCase()] > max)
                 {
                     index = job;
-                    max = user[job];
+                    max = user[job.toLowerCase()];
                 }
             }
             res.render("quiz", {
                 question: "",
                 answers: "",
-                result: `Results: You are a${index.toLowerCase().charAt(0) === "a" ? "n" : ""} ${index}!`
+                result: `Results: You are a${index === "Artificer" ? "n" : ""} ${index}!`
             });
         }
         //res.send('Welcome to the Dungeons and Dragons web server!');

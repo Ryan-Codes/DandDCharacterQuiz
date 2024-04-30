@@ -31,6 +31,19 @@ for(const file of fs.readdirSync(path.join(__dirname, "../pages/")))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // mongoose.connect("mongodb://localhost:27017/DND").then(() => {
 //     console.log("Database is connected successfully.");
 // })
