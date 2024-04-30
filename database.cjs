@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/DND").then(() => {
+mongoose.connect("mongodb://localhost:27017/DND");//.then(() => {
     // console.log("Database is connected successfully.");
-}).catch((error) => console.log(error));
+// }).catch((error) => {
+    // console.log(error)
+// });
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -37,20 +39,22 @@ const buildSchema = new mongoose.Schema({
 const UserModel = mongoose.model("users", userSchema);
 
 // Get a user by username
-async function getUser(username){
+async function getUser(username)
+{
     try
     {
         return await UserModel.findOne({ username });
     }
     catch(error)
     {
-        console.log(error);
+        // console.log(error);
         return 0;
     }
 }
 
 // Insert a new user into the database
-async function insertUser(newUser) {
+async function insertUser(newUser)
+{
     try
     {
         const user = await UserModel.create(newUser);
@@ -58,6 +62,7 @@ async function insertUser(newUser) {
     }
     catch(error)
     {
+        // console.log(error)
         return null;
     }
 }
@@ -76,6 +81,7 @@ async function insertBuild(username, newBuild)
     }
     catch(error)
     {
+        // console.log(error)
         return null;
     }
 }
@@ -94,13 +100,15 @@ async function updateUserValues(username, valuesToAdd)
     }
     catch(error)
     {
+        // console.log(error)
         return null;
     }
 }
 
 async function resetUserStats(username)
 {
-    try {
+    try
+    {
         const user = await UserModel.findOneAndUpdate(
             { username },
             {
@@ -124,8 +132,10 @@ async function resetUserStats(username)
             { new: true }
         );
         return user;
-    } catch (error) {
-        throw error;
+    }
+    catch(error)
+    {
+        // console.log(error)
     }
 }
 

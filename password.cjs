@@ -8,7 +8,7 @@ module.exports = {
         }
         catch(error)
         {
-            throw error;
+            // console.log(error)
         }
     },
     password_verify(password, hashedPassword)
@@ -23,12 +23,4 @@ module.exports = {
             return false;
         }
     }
-    // (async () => {
-    //     const password = "password123";
-    //     const hashedPassword = await password_hash(password);
-    //     console.log("Hashed password:", hashedPassword);
-
-    //     const isMatch = await password_verify(password, hashedPassword);
-    //     console.log("Password matches:", isMatch);
-    // })();
 };
