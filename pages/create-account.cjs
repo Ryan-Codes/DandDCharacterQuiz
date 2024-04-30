@@ -19,7 +19,6 @@ module.exports = {
         {
             db.insertUser({
                 "username": req.body.username,
-                "password": req.body.password,
                 "hash": password_hash(req.body.password),
                 "question": 0,
                 "artificer": 0,

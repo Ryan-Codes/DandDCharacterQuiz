@@ -6,7 +6,6 @@ mongoose.connect("mongodb://localhost:27017/DND").then(() => {
 
 const userSchema = new mongoose.Schema({
     username: String,
-    password: String,
     hash: String,
     question: Number,
     artificer: Number,
