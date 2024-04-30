@@ -42,6 +42,5 @@ module.exports = {
                 result: `Results: You are a${index === "Artificer" ? "n" : ""} ${index}!`
             });
         }
-        //res.send('Welcome to the Dungeons and Dragons web server!');
     }
 };

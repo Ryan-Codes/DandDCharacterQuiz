@@ -24,6 +24,5 @@ module.exports = {
         values.question = 1;
         db.updateUserValues(req.cookies.username, values);
         res.redirect("/quiz");
-        //res.send('Welcome to the Dungeons and Dragons web server!');
     }
 };
