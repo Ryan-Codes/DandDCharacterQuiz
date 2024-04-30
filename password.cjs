@@ -13,14 +13,13 @@ module.exports = {
     },
     password_verify(password, hashedPassword)
     {
-        return password === hashedPassword;
         try
         {
             return bcrypt.compareSync(password, hashedPassword);
         }
         catch(error)
         {
-            console.log(error);
+            // console.log(error);
             return false;
         }
     }
