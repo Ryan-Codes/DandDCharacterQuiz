@@ -14,4 +14,10 @@ function displayQuestion(answers)
         answerContainer.appendChild(document.createElement("br"));
         answerContainer.appendChild(document.createElement("br"));
     }
+    /*
+    <br>
+    <input class="answer-btn" type="submit" name=<% =answers[i] %> value=" <%= String.fromCharCode(i + 65) + ". " + answers[i] %> ">
+    <br>
+    <br>
+    */
 }

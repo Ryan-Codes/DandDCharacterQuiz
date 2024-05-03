@@ -20,7 +20,7 @@ module.exports = {
         {
             res.render("quiz", {
                 question: (questionNumber + 1) + ". " + questions[questionNumber].question,
-                answers: JSON.stringify(Object.keys(questions[questionNumber].answers)),
+                answers: Object.keys(questions[questionNumber].answers),
                 result: ""
             });
         }
