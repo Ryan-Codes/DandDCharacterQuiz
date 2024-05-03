@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
     wizard: Number
 });
 const buildSchema = new mongoose.Schema({
+    creator: String,
     name: String,
     level: Number,
     str: Number,
@@ -33,7 +34,23 @@ const buildSchema = new mongoose.Schema({
     int: Number,
     wis: Number,
     cha: Number,
-    class: String
+    class: String,
+    Background: {
+        type: String,
+        required: false
+    },
+    Equipment: {
+        type: [String],
+        required: false
+    },
+    Proficiencies: {
+        type: [String],
+        required: false
+    },
+    Languages: {
+        type: [String],
+        required: false
+    }
 });
 
 const UserModel = mongoose.model("users", userSchema);

@@ -45,16 +45,38 @@
         </h1>
         <div class="character-builder">
             <form id="builder" action="/builder" method="post">
+                <h2>
+                    <%= job %>
+                </h2>
+                <input type="hidden" id="class" name="class" value="<%= job %>" required>
+                <label for="name">
+                    Name:
+                </label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="level">
+                    Level
+                </label>
+                <input type="number" id="level" name="level" min="1" max="20" required>
+                <br>
 <%
+    for(const stat of Object.entries(stats))
+    {
+%>
+                <%= stat[0] %>: <%= stat[1] %> (<%= statModifiers[stat[1] - 1] > 0 ? "+" : "" %><%= statModifiers[stat[1] - 1] %>)
+                <input type="hidden" id="<%= stat[0] %>" name="<%= stat[0] %>" value="<%= stat[1] %>" required>
+                <br>
+
+<%
+    }
     for(const buildOption of Object.entries(buildOptions))
     {
 %>
-                <br>
                 <label for="<%= buildOption[0] %>">
                     <%= buildOption[0] %>
                 </label>
                 <select name="<%= buildOption[0] %>" id="<%= buildOption[0] %>"<%= buildOption[0] !== "Background" ? " multiple" : "" %>>
-                    <option value="<%= buildOption[0] %>" disabled>
+                    <option value="<%= buildOption[0] %>" selected disabled>
                         <%= buildOption[0] %>
                     </option>
 <%
@@ -68,9 +90,12 @@
         }
 %>
                 </select>
+                <br>
 <%
     }
 %>
+                <br>
+                <input class="answer-btn" type="submit" value="Build">
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
