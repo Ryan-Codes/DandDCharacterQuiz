@@ -45,7 +45,7 @@ h2{
     text-align: center;
 }
 
-.quiz-container {
+.quiz-container, .character-builder {
     background: rgba(99, 34, 34, 0.82);
     text-align: center;
     width: 80%;
