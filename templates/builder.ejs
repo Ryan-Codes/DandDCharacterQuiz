@@ -45,24 +45,6 @@
         </h1>
         <div class="character-builder">
             <form id="builder" action="/builder" method="post">
-                <label for="background">
-                    Background
-                </label>
-                <select name="background" id="background">
-                    <option value="background" disabled>
-                        Background
-                    </option>
-<%
-    for(const background of backgrounds)
-    {
-%>
-                    <option value="<%= background %>">
-                        <%= background %>
-                    </option>
-<%
-    }
-%>
-                </select>
 <%
     for(const buildOption of Object.entries(buildOptions))
     {
@@ -71,7 +53,7 @@
                 <label for="<%= buildOption[0] %>">
                     <%= buildOption[0] %>
                 </label>
-                <select name="<%= buildOption[0] %>" id="<%= buildOption[0] %>" multiple>
+                <select name="<%= buildOption[0] %>" id="<%= buildOption[0] %>"<%= buildOption[0] !== "Background" ? " multiple" : "" %>>
                     <option value="<%= buildOption[0] %>" disabled>
                         <%= buildOption[0] %>
                     </option>
