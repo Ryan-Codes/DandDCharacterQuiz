@@ -46,7 +46,7 @@ h2{
 }
 
 .quiz-container, .character-builder {
-    background: rgba(99, 34, 34, 0.82);
+    background: rgba(99, 34, 34, 0.6);
     text-align: center;
     width: 80%;
     margin-left: auto;
@@ -55,7 +55,11 @@ h2{
     max-width: 500px;
     border-radius: 20%;
     border: solid rgb(99,34,34) 1px ;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+}
+
+.character-builder{
+    color: white;
 }
 
 .wrapper, .signup-wrapper {
@@ -222,7 +226,7 @@ h2{
     box-shadow: 2px 4px 4px black;
 }
 
-.user-options-btn, .login-btn, .signup-btn{
+.user-options-btn, .login-btn, .signup-btn, .answer-btn, .reroll-btn{
     width: 75%;
     height: 45px;
     align-items: center;
@@ -237,6 +241,10 @@ h2{
     font-size: 16px;
     color: #333;
     font-weight: 600;
+}
+
+.answer-btn, .reroll-btn {
+    margin-right: 50px;
 }
 
 .hidden {
