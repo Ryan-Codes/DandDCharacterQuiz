@@ -4,7 +4,7 @@ const { rollStat } = require(path.join(__dirname, "../randomInt.cjs"));
 const buildOptions = require(path.join(__dirname, "../buildOptions.json"));
 const statModifiers = require(path.join(__dirname, "../statModifiers.json"));
 /**
- * //
+ * page used for getting input for the build, after completing the quiz
  */
 module.exports = {
     name: "/builder",

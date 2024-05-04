@@ -8,7 +8,7 @@ module.exports = {
         }
         catch(error)
         {
-            // console.log(error)
+            console.log(error)
         }
     },
     password_verify(password, hashedPassword)
@@ -19,7 +19,7 @@ module.exports = {
         }
         catch(error)
         {
-            // console.log(error);
+            console.log(error);
             return false;
         }
     }

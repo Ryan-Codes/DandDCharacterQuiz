@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/DND");//.then(() => {
-    // console.log("Database is connected successfully.");
-// }).catch((error) => {
-    // console.log(error)
-// });
+mongoose.connect("mongodb://localhost:27017/DND").catch((error) => {
+    console.log(error)
+});
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -65,7 +63,7 @@ async function getUser(username)
     }
     catch(error)
     {
-        // console.log(error);
+        console.log(error);
         return 0;
     }
 }
@@ -80,7 +78,7 @@ async function insertUser(newUser)
     }
     catch(error)
     {
-        // console.log(error)
+        console.log(error)
         return null;
     }
 }
@@ -114,7 +112,7 @@ async function updateUserValues(username, valuesToAdd)
     }
     catch(error)
     {
-        // console.log(error)
+        console.log(error)
         return null;
     }
 }
@@ -149,7 +147,7 @@ async function resetUserStats(username)
     }
     catch(error)
     {
-        // console.log(error)
+        console.log(error)
     }
 }
 
@@ -161,7 +159,7 @@ async function getBuilds(username)
     }
     catch(error)
     {
-        // console.log(error);
+        console.log(error);
         return 0;
     }
 }
