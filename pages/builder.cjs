@@ -4,8 +4,7 @@ const { rollStat } = require(path.join(__dirname, "../randomInt.cjs"));
 const buildOptions = require(path.join(__dirname, "../buildOptions.json"));
 const statModifiers = require(path.join(__dirname, "../statModifiers.json"));
 /**
- * If account creation successful, server redirects to index page,
- * else renders create account page
+ * //
  */
 module.exports = {
     name: "/builder",

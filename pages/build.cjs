@@ -1,8 +1,7 @@
 const path = require("path");
-// const db = require(path.join(__dirname, "../database.cjs"));
+const db = require(path.join(__dirname, "../database.cjs"));
 /**
- * If account creation successful, server redirects to index page,
- * else renders create account page
+ * //
  */
 module.exports = {
     name: "/builder",
@@ -14,11 +13,22 @@ module.exports = {
             res.redirect("/");
             return;
         }
-        console.log(req.body);
-        res.redirect("/builder");
-        // res.render("builder", {
-        //     backgrounds: backgrounds,
-        //     buildOptions: buildOptions
-        // });
+        db.insertBuild({
+            creator: req.cookies.username,
+            name: req.body.name,
+            level: req.body.level,
+            str: req.body.str,
+            dex: req.body.dex,
+            con: req.body.con,
+            int: req.body.int,
+            wis: req.body.wis,
+            cha: req.body.cha,
+            class: req.body.class,
+            Background: req.body.Background,
+            Equipment: req.body.Equipment,
+            Proficiencies: req.body.Proficiencies,
+            Languages: req.body.Languages
+        });
+        res.redirect("/profile");
     }
 };
