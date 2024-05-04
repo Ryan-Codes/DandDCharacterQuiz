@@ -71,6 +71,17 @@
                 </form>
                 <!--Display results here-->
             </div>
+<%
+    if(result)
+    {
+%>
+            <br>
+            <form id="builder" action="/builder" method="get">
+                <input type="submit" value=" Character Builder " name="builder" class="answer-btn" id="builder">
+            </form>
+<%
+    }
+%>
         </div>
         <script Content-Type="application/javascript" src="/scripts/generateQuiz.js"></script>
         <!-- <script>

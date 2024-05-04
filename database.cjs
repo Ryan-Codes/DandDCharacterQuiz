@@ -86,20 +86,16 @@ async function insertUser(newUser)
 }
 
 // Insert a new build for a user
-async function insertBuild(username, newBuild)
+async function insertBuild(newBuild)
 {
     try
     {
-        const user = await UserModel.findOneAndUpdate(
-            { username },
-            { $push: { builds: newBuild } },
-            { new: true }
-        );
+        const user = await BuildModel.create(newBuild);
         return user;
     }
     catch(error)
     {
-        // console.log(error)
+        console.log(error)
         return null;
     }
 }

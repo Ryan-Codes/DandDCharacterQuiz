@@ -61,8 +61,13 @@
                     My Builds
                 </button>
                 <div id="sectionToToggle" class="hidden">
-                    <h2>Section Content</h2>
-                    <p id="build-content">My Builds.</p>
+                    <h2>
+                        Section Content
+                    </h2>
+                    <p id="build-content">
+                        <%= builds %>
+                        My Builds.
+                    </p>
                 </div>
                 <form id="logoutForm" action="/logout" method="post">
                     <input type="submit" class="user-options-btn" id="logout-btn" name="logout" value="logout">
