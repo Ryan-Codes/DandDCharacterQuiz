@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 
+/**
+ * @author Kyle Ernst
+ */
+
 mongoose.connect("mongodb://localhost:27017/DND").catch((error) => {
     console.log(error)
 });
