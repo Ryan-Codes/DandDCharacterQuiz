@@ -54,6 +54,7 @@ const buildSchema = new mongoose.Schema({
 });
 
 const UserModel = mongoose.model("users", userSchema);
+const BuildModel = mongoose.model("builds", buildSchema);
 
 // Get a user by username
 async function getUser(username)
@@ -156,11 +157,25 @@ async function resetUserStats(username)
     }
 }
 
+async function getBuilds(username)
+{
+    try
+    {
+        return await BuildModel.find({ creator: username });
+    }
+    catch(error)
+    {
+        // console.log(error);
+        return 0;
+    }
+}
+
 module.exports = {
     getUser,
     insertUser,
     insertBuild,
     updateUserValues,
-    resetUserStats
+    resetUserStats,
+    getBuilds
 };
 
