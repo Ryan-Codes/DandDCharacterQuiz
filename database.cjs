@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     hash: String,
     question: Number,
     artificer: Number,
-    barbarian: Number,
+    barbarian: Number ,
     bard: Number,
     cleric: Number,
     druid: Number,
