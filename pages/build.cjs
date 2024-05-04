@@ -29,6 +29,7 @@ module.exports = {
             Proficiencies: req.body.Proficiencies,
             Languages: req.body.Languages
         });
+        db.resetUserStats(req.cookies.username);
         res.redirect("/profile");
     }
 };
