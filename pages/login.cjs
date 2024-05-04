@@ -4,6 +4,7 @@ const db = require(path.join(__dirname, "../database.cjs"));
 /**
  * If login successful, server redirects to profile page,
  * else renders
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/login",

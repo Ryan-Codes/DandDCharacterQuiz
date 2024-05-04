@@ -3,6 +3,7 @@ const db = require(path.join(__dirname, "../database.cjs"));
 const questions = require(path.join(__dirname, "../questions"));
 /**
  * Server processes quiz data and redirects to profile page
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/quiz",
