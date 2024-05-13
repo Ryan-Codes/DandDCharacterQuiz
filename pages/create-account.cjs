@@ -4,6 +4,7 @@ const { password_hash } = require(path.join(__dirname, "../password.cjs"));
 /**
  * If account creation successful, server redirects to index page,
  * else renders create account page
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/create-account",

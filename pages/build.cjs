@@ -1,7 +1,8 @@
 const path = require("path");
 const db = require(path.join(__dirname, "../database.cjs"));
 /**
- * //
+ * page used for processing data used for building the characters
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/builder",
@@ -29,6 +30,7 @@ module.exports = {
             Proficiencies: req.body.Proficiencies,
             Languages: req.body.Languages
         });
+        db.resetUserStats(req.cookies.username);
         res.redirect("/profile");
     }
 };

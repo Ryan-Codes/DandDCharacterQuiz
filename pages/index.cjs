@@ -1,5 +1,6 @@
 /**
  * Server renders the index page
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/",

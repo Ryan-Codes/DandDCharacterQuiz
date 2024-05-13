@@ -1,7 +1,9 @@
 const path = require("path");
 const db = require(path.join(__dirname, "../database.cjs"));
+const statModifiers = require(path.join(__dirname, "../statModifiers.json"));
 /**
  * Server renders the profile page
+ * @author Cory Lillis
  */
 module.exports = {
     name: "/profile",
@@ -19,7 +21,8 @@ module.exports = {
             username: req.cookies.username,
             builds: builds,
             pfp: pfp ?? "/images/default.jpg",
-            bio: bio ?? "About Me..."
+            bio: bio ?? "About Me...",
+            statModifiers: statModifiers
         });
     }
 };
